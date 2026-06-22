@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galeri Kegiatan | FIRMA HUKUM MAS MOH AINUL YAKIN & PARTNERS</title>
+  
+  <!-- Memanggil CSS Utama -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* ==========================================================================
+       CSS KHUSUS HALAMAN GALERI
+       ========================================================================== */
+    body { background-color: #ffffff; color: #333; }
+
+    .gallery-hero {
+      position: relative;
+      padding: 160px 0 100px 0;
+      /* GAMBAR LATAR HERO */
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)), 
+                  url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      border-bottom: 5px solid #FFD700;
+      text-align: left;
+    }
+
+    .gallery-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      color: #000000 !important;
+      font-weight: 900;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .gallery-hero p {
+      font-size: 1.2rem;
+      color: #000000 !important;
+      font-weight: 800;
+    }
+
+    /* Filter Buttons */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: #eee;
+      color: #000;
+      border: none;
+      padding: 12px 25px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: #000;
+      color: #FFD700;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+      padding-bottom: 80px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 280px;
+      border: 1px solid #eee;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-top: 4px solid #FFD700;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s ease;
+    }
+
+    /* Overlay (Judul dihapus, hanya ikon zoom) */
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 215, 0, 0.85); /* Warna kuning transparan saat hover */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-item:hover img { transform: scale(1.1); }
+
+    .gallery-overlay i {
+      color: #000;
+      font-size: 2rem;
+      transform: translateY(20px);
+      transition: 0.4s;
+    }
+
+    .gallery-item:hover .gallery-overlay i { transform: translateY(0); }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .lightbox.show { display: flex; opacity: 1; }
+    .lightbox-content { max-width: 85%; max-height: 80%; position: relative; }
+    .lightbox-content img { width: 100%; height: auto; max-height: 80vh; border: 4px solid #FFD700; border-radius: 8px; }
+    .lightbox-close { position: absolute; top: -50px; right: 0; color: #FFD700; font-size: 3rem; cursor: pointer; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .gallery-hero h1 { font-size: 2.5rem; }
+      .nav-links {
+        display: none; position: absolute; top: 80px; left: 0; width: 100%;
+        background: #FFD700; flex-direction: column; padding: 20px 0;
+        z-index: 1000; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      }
+      .nav-links.open { display: flex !important; }
+      .hamburger { display: flex !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar" style="background: #FFD700;">
+    <div class="nav-container container">
+      <div class="nav-logo">
+        <img src="images/logo2.jfif" alt="Logo" class="nav-logo-img" style="height:60px; mix-blend-mode: multiply; filter: none !important;" />
+        <div class="nav-logo-text">
+          <span class="logo-title" style="color:#000; font-weight:900;">FIRMA HUKUM MAS</span>
+          <span class="logo-sub" style="color:#000; font-weight:700;">Moh Ainul Yakin & Partners</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link" style="color:#000 !important; font-weight:700;">Home</a></li>
+        <li><a href="profil.html" class="nav-link" style="color:#000 !important; font-weight:700;">Profil</a></li>
+        <li><a href="layanan.html" class="nav-link" style="color:#000 !important; font-weight:700;">Layanan</a></li>
+        <li><a href="artikel.html" class="nav-link" style="color:#000 !important; font-weight:700;">Artikel</a></li>
+        <li><a href="tim.html" class="nav-link" style="color:#000 !important; font-weight:700;">Tim</a></li>
+        <li><a href="galeri.html" class="nav-link active" style="color:#000 !important; font-weight:700; background: rgba(0,0,0,0.1);">Galeri</a></li>
+        <li><a href="kontak.html" class="nav-link" style="color:#000 !important; font-weight:700;">Kontak</a></li>
+        <li><a href="#kontak" class="nav-btn-konsul" style="background:#000; color:#FFD700 !important;">Konsultasi</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" style="display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer;">
+        <span style="width:25px; height:3px; background:#000;"></span>
+        <span style="width:25px; height:3px; background:#000;"></span>
+        <span style="width:25px; height:3px; background:#000;"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <header class="gallery-hero">
+    <div class="container">
+      <h1>Galeri Kegiatan</h1>
+      <p>Dokumentasi aktivitas penanganan perkara dan edukasi hukum tim kami.</p>
+    </div>
+  </header>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section class="container" style="padding-top: 80px;">
+      
+      <!-- Filter Kategori (Tetap dipertahankan) -->
+      <!-- <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Semua Foto</button>
+        <button class="filter-btn" data-filter="sidang">Proses Sidang</button>
+        <button class="filter-btn" data-filter="kegiatan">Rapat & Konsultasi</button>
+        <button class="filter-btn" data-filter="edukasi">Seminar & Edukasi</button>
+      </div> -->
+
+      <!-- Grid Foto (Judul Dihapus) -->
+      <div class="gallery-grid" id="galleryGrid">
+        
+        <div class="gallery-item" data-category="sidang">
+          <img src="images/galeri2.jfif" alt="Galeri MAS" />
+          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="kegiatan">
+          <img src="images/gl1.jpeg" alt="Galeri MAS" />
+          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="edukasi">
+          <img src="images/gl2.jpeg" alt="Galeri MAS" />
+          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="sidang">
+          <img src="images/gl3.jpeg" alt="Galeri MAS" />
+          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="kegiatan">
+          <img src="images/gl4.jpeg" alt="Galeri MAS" />
+          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+
+      </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" id="lightboxImg" alt="Preview" />
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container footer-grid">
+      
+      <!-- Bagian Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo-bg.png" alt="Logo Firma Hukum MAS" class="footer-logo-img" />
+          <!-- Teks Branding yang tadi hilang -->
+          <div class="footer-logo-text">
+            <span class="footer-logo-title">FIRMA HUKUM MAS</span>
+            <span class="footer-logo-sub">Moh Ainul Yakin & Partners</span>
+          </div>
+        </div>
+        <p class="footer-tagline">Profesional, Berintegritas, dan Berorientasi pada Solusi Hukum yang Tepat.</p>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+
+      <!-- Layanan -->
+      <div class="footer-links">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="layanan.html#perdata">Hukum Perdata</a></li>
+          <li><a href="layanan.html#pidana">Hukum Pidana</a></li>
+          <li><a href="layanan.html#bisnis">Hukum Bisnis</a></li>
+          <li><a href="layanan.html#ketenagakerjaan">Ketenagakerjaan</a></li>
+          <li><a href="layanan.html#pertanahan">Pertanahan</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div class="footer-contact">
+        <h4>Kontak</h4>
+        <p><i class="fas fa-phone"></i> 0853-3525-4018</p>
+        <p><i class="fas fa-envelope"></i> yaqinmdr.official@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Perintis Utama 1 No. 5</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2025 Firma Hukum MAS Moh Ainul Yakin & Partners. Hak Cipta Dilindungi.</p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    // 1. Script Hamburger
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          navLinks.classList.toggle('open');
+        });
+      }
+    });
+
+    // 2. Script Filter Galeri
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelector('.filter-btn.active').classList.remove('active');
+        button.classList.add('active');
+        const filterValue = button.getAttribute('data-filter');
+        galleryItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Script Lightbox (Klik Gambar Membesar)
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.querySelector('img').src;
+        lightbox.classList.add('show');
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => { lightbox.classList.remove('show'); });
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('show'); });
+  </script>
+</body>
+</html>

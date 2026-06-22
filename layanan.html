@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan Hukum - FIRMA HUKUM MAS MOH AINUL YAKIN & PARTNERS</title>
+  
+  <!-- Memanggil CSS Utama -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    :root {
+      --pure-yellow: #FFD700; /* Kuning Brand */
+      --white: #ffffff;
+      --black: #000000;
+      --text-gray: #333333;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background-color: var(--white);
+      color: var(--text-gray);
+      font-family: 'Lato', sans-serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+    /* ==========================================================================
+       NAVBAR (KUNING & HITAM)
+       ========================================================================== */
+    .navbar {
+      background: var(--pure-yellow);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-img { height: 60px; width: auto; mix-blend-mode: multiply; }
+    .nav-logo-text { display: flex; flex-direction: column; }
+    .logo-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.4rem; color: var(--black); line-height: 1.1; }
+    .logo-sub { font-size: 0.85rem; color: var(--black); font-weight: 700; }
+
+    .nav-links { display: flex; align-items: center; list-style: none; gap: 15px; }
+    .nav-link { 
+      text-decoration: none; color: var(--black) !important; 
+      font-weight: 700; font-size: 14px; transition: 0.3s; 
+      padding: 6px 12px; border-radius: 4px;
+    }
+    .nav-link:hover, .nav-link.active { background: var(--black); color: var(--pure-yellow) !important; }
+
+    .nav-btn-konsul {
+      background: var(--black);
+      color: var(--pure-yellow) !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 25px; height: 3px; background: #000; border-radius: 2px; }
+
+    /* ==========================================================================
+       HERO MINI (GAMBAR FIX)
+       ========================================================================== */
+    .services-hero {
+      position: relative;
+      padding: 160px 0 100px 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      border-bottom: 5px solid var(--pure-yellow);
+    }
+
+    .services-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      color: #000 !important;
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .services-hero p { font-size: 1.2rem; color: #000 !important; font-weight: 800; }
+
+    /* ==========================================================================
+       SERVICES SECTION
+       ========================================================================== */
+    .services-section { padding: 80px 0; background: #fff; }
+    .intro-text { text-align: center; max-width: 900px; margin: 0 auto 60px auto; font-size: 1.1rem; color: #000; font-weight: 600; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+
+    .service-card {
+      background: #fff; border: 1px solid #eee; padding: 40px; border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; border-top: 5px solid var(--pure-yellow);
+    }
+    .service-card:hover { transform: translateY(-10px); border-top-color: #000; }
+
+    .service-icon-wrap { width: 60px; height: 60px; background: #000; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; }
+    .service-icon-wrap i { color: var(--pure-yellow); font-size: 24px; }
+
+    .service-card h3 { font-family: 'Playfair Display', serif; color: #000; font-size: 24px; margin-bottom: 15px; font-weight: 800; }
+    .service-scopes { list-style: none; border-top: 1px solid #eee; padding-top: 20px; margin-top: 15px; }
+    .service-scopes li { font-size: 14px; color: #000; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .service-scopes li i { color: var(--pure-yellow); font-size: 12px; }
+
+    /* ==========================================================================
+       CTA SECTION
+       ========================================================================== */
+    .cta-section { background-color: var(--pure-yellow); padding: 100px 0; text-align: center; }
+    .cta-section h2 { font-family: 'Playfair Display', serif; color: #000 !important; font-size: 2.8rem; font-weight: 900; margin-bottom: 20px; }
+    .cta-section p { color: #000 !important; font-size: 1.2rem; font-weight: 700; max-width: 800px; margin: 0 auto 40px auto; }
+    .btn-whatsapp { display: inline-flex; align-items: center; gap: 12px; background-color: #000; color: var(--pure-yellow) !important; padding: 18px 45px; font-weight: 800; border-radius: 50px; text-decoration: none; font-size: 1.1rem; transition: 0.3s; }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer { background: var(--pure-yellow); color: #000; padding: 60px 0 20px; position: relative; overflow: hidden; }
+    .footer::before { content: ""; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: contain; background-position: right center; background-repeat: no-repeat; opacity: 0.12; z-index: 1; pointer-events: none; }
+    .footer-top, .footer-bottom { position: relative; z-index: 2; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; }
+    .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .footer-logo-img { height: 60px; ; mix-blend-mode: multiply; }
+    .footer-logo-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; line-height: 1.1; }
+    .footer-logo-sub { font-size: 0.85rem; font-weight: 700; }
+    .footer-tagline { font-size: 13px; font-weight: 600; line-height: 1.7; max-width: 280px; }
+    .footer-contact p { font-weight: 700; display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+
+    /* ==========================================================================
+       RESPONSIVE
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; position: absolute; top: 80px; left: 0; width: 100%;
+        background: var(--pure-yellow); flex-direction: column; padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      }
+      .nav-links.open { display: flex !important; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .services-hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="images/logo2.jfif" alt="Logo" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="logo-title">FIRMA HUKUM MAS</span>
+          <span class="logo-sub">Moh Ainul Yakin & Partners</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="profil.html" class="nav-link">Profil</a></li>
+        <li><a href="layanan.html" class="nav-link active">Layanan</a></li>
+        <li><a href="artikel.html" class="nav-link">Artikel</a></li>
+        <li><a href="tim.html" class="nav-link">Tim</a></li>
+        <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+        <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+        <li><a href="kontak.html#kontak" class="nav-btn-konsul">Konsultasi</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO MINI -->
+  <header class="services-hero">
+    <div class="container">
+      <h1>Layanan Hukum</h1>
+      <p><a href="index.html">Beranda</a> / Daftar Layanan</p>
+    </div>
+  </header>
+
+  <!-- DAFTAR LAYANAN -->
+  <main class="services-section">
+    <div class="container">
+      <div class="intro-text">
+        <p>Kami menyediakan berbagai komparasi penanganan masalah hukum secara komprehensif, baik untuk kebutuhan perorangan (Litigasi & Non-Litigasi) maupun korporasi bisnis. Penanganan perkara dilakukan secara terukur, taktis, dan tetap berada dalam koridor hukum yang berlaku.</p>
+      </div>
+
+      <div class="services-grid">
+        
+        <!-- HUKUM PIDANA -->
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-shield-halved"></i></div>
+          <h3>Hukum Pidana</h3>
+          <p>Pendampingan hukum yang intensif mulai dari tingkat penyelidikan di Kepolisian, penyidikan di Kejaksaan, hingga proses pembelaan di persidangan Pengadilan Negeri.</p>
+          <ul class="service-scopes">
+            <li><i class="fas fa-check-circle"></i> Pendampingan Saksi / Tersangka</li>
+            <li><i class="fas fa-check-circle"></i> Tindak Pidana Penipuan & Penggelapan</li>
+            <li><i class="fas fa-check-circle"></i> Pelaporan & Aduan Tindak Pidana</li>
+          </ul>
+        </div>
+
+        <!-- HUKUM PERDATA -->
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-gavel"></i></div>
+          <h3>Hukum Perdata</h3>
+          <p>Penyelesaian sengketa hak keperdataan antarpribadi maupun kelompok guna mengamankan hak materiel dan imateriel secara hukum formil.</p>
+          <ul class="service-scopes">
+            <li><i class="fas fa-check-circle"></i> Sengketa Wanprestasi (Ingkar Janji)</li>
+            <li><i class="fas fa-check-circle"></i> Perbuatan Melawan Hukum (PMH)</li>
+            <li><i class="fas fa-check-circle"></i> Eksekusi Jaminan & Hutang Piutang</li>
+          </ul>
+        </div>
+
+        <!-- KORPORASI & BISNIS -->
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-briefcase"></i></div>
+          <h3>Korporasi & Bisnis</h3>
+          <p>Mitra strategis bagi pelaku usaha untuk memastikan operasional bisnis berjalan sesuai dengan regulasi dan terhindar dari risiko jerat hukum di kemudian hari.</p>
+          <ul class="service-scopes">
+            <li><i class="fas fa-check-circle"></i> Pembuatan & Analisis Kontrak Dagang</li>
+            <li><i class="fas fa-check-circle"></i> Legalitas & Perizinan Usaha</li>
+            <li><i class="fas fa-check-circle"></i> Sengketa Ketenagakerjaan</li>
+          </ul>
+        </div>
+
+        <!-- PERKAWINAN & WARIS -->
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-users"></i></div>
+          <h3>Perkawinan & Waris</h3>
+          <p>Penanganan masalah hukum keluarga secara persuasif dan tertutup demi menjaga privasi serta hak-hak hukum dari setiap anggota keluarga.</p>
+          <ul class="service-scopes">
+            <li><i class="fas fa-check-circle"></i> Perceraian & Hak Asuh Anak</li>
+            <li><i class="fas fa-check-circle"></i> Pembagian Harta Bersama (Gono-Gini)</li>
+            <li><i class="fas fa-check-circle"></i> Sengketa & Pembagian Waris</li>
+          </ul>
+        </div>
+
+        <!-- PERTANAHAN -->
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-map-location-dot"></i></div>
+          <h3>Pertanahan & Properti</h3>
+          <p>Penyelesaian konflik kepemilikan aset tak bergerak, tumpang tindih sertifikat, hingga pengurusan legalitas properti komersial.</p>
+          <ul class="service-scopes">
+            <li><i class="fas fa-check-circle"></i> Sengketa Kepemilikan Tanah</li>
+            <li><i class="fas fa-check-circle"></i> Kasus Penyerobotan Lahan</li>
+            <li><i class="fas fa-check-circle"></i> Validasi Dokumen Pertanahan</li>
+          </ul>
+        </div>
+
+        <!-- KONSULTASI -->
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-comments"></i></div>
+          <h3>Konsultasi & Mediasi</h3>
+          <p>Upaya penyelesaian sengketa di luar jalur pengadilan (Non-Litigasi) melalui negosiasi mediatif yang mengedepankan solusi saling menguntungkan.</p>
+          <ul class="service-scopes">
+            <li><i class="fas fa-check-circle"></i> Mediasi Sengketa Antarpihak</li>
+            <li><i class="fas fa-check-circle"></i> Pendapat Hukum (Legal Opinion)</li>
+            <li><i class="fas fa-check-circle"></i> Legal Audit Perusahaan</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- CALL TO ACTION (Kuning & Hitam) -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Butuh Solusi Hukum yang Tepat?</h2>
+      <p>Jangan biarkan permasalahan hukum Anda berlarut-larut. Konsultasikan situasi hukum Anda bersama tim advokat kami sekarang secara privat.</p>
+      <a href="https://wa.me/6285335254018" target="_blank" class="btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+      </a>
+    </div>
+  </section>
+
+ <!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container footer-grid">
+      
+      <!-- Bagian Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo-bg.png" alt="Logo Firma Hukum MAS" class="footer-logo-img" />
+          <!-- Teks Branding yang tadi hilang -->
+          <div class="footer-logo-text">
+            <span class="footer-logo-title">FIRMA HUKUM MAS</span>
+            <span class="footer-logo-sub">Moh Ainul Yakin & Partners</span>
+          </div>
+        </div>
+        <p class="footer-tagline">Profesional, Berintegritas, dan Berorientasi pada Solusi Hukum yang Tepat.</p>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="tim.html">Tim</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+
+      <!-- Layanan -->
+      <div class="footer-links">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="layanan.html#perdata">Hukum Perdata</a></li>
+          <li><a href="layanan.html#pidana">Hukum Pidana</a></li>
+          <li><a href="layanan.html#bisnis">Hukum Bisnis</a></li>
+          <li><a href="layanan.html#ketenagakerjaan">Ketenagakerjaan</a></li>
+          <li><a href="layanan.html#pertanahan">Pertanahan</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div class="footer-contact">
+        <h4>Kontak</h4>
+        <p><i class="fas fa-phone"></i> 0853-3525-4018</p>
+        <p><i class="fas fa-envelope"></i> yaqinmdr.official@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Perintis Utama 1 No. 5</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2025 Firma Hukum MAS Moh Ainul Yakin & Partners. Hak Cipta Dilindungi.</p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          navLinks.classList.toggle('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Lengkap - FIRMA HUKUM MAS MOH AINUL YAKIN & PARTNERS</title>
+  
+  <!-- Memanggil CSS Utama agar sinkron warnanya -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* CSS Khusus Konten Halaman Profil */
+.profile-hero {
+  position: relative;
+  padding: 150px 0 80px 0; /* Tambah padding agar lebih lega */
+  
+  /* GAMBAR LATAR: Meja Hukum/Perpustakaan Klasik */
+  background: linear-gradient(rgba(255, 215, 0, 0.3), rgba(255, 255, 255, 0.8)), 
+              url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+  
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efek paralaks keren saat di-scroll */
+  border-bottom: 3px solid #FFD700;
+}
+
+.profile-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem; /* Ukuran diperbesar agar gagah */
+  color: #000000 !important; /* HITAM PEKAT */
+  font-weight: 900;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.profile-hero p {
+  font-size: 1.1rem;
+  color: #000000 !important; /* HITAM PEKAT */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Warna link Beranda agar tetap hitam tapi ada efek hover */
+.profile-hero p a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s;
+  opacity: 0.7; /* Buat sedikit pudar untuk pembeda */
+}
+
+.profile-hero p a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+  .profile-hero {
+    padding: 120px 0 50px 0;
+    text-align: center;
+  }
+  .profile-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+    .profile-detail { padding: 80px 0; background: #fff; }
+    .profile-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: start; }
+
+    .photo-wrapper {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    .photo-wrapper img { width: 100%; height: auto; border-radius: 4px; display: block; }
+
+    .quick-contact {
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 25px;
+      border: 1px solid #eee;
+    }
+    .quick-contact h3 {
+      font-family: 'Playfair Display', serif;
+      color: #000;
+      font-size: 20px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #FFD700;
+      padding-bottom: 10px;
+    }
+    .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .contact-item i { color: #000; font-size: 18px; width: 25px; }
+    .contact-item span { color: #000; font-weight: 600; }
+
+    .main-bio-content h2 { font-family: 'Playfair Display', serif; color: #000; font-size: 36px; margin-bottom: 10px; }
+    
+    .lawyer-title {
+      font-size: 16px;
+      color: #000;
+      background: #FFD700;
+      display: inline-block;
+      padding: 4px 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      font-weight: 800;
+    }
+
+    .bio-text { font-size: 16px; margin-bottom: 40px; text-align: justify; color: #333; line-height: 1.8; }
+
+    .bio-section { margin-bottom: 45px; }
+    .bio-section h3 {
+      font-family: 'Playfair Display', serif;
+      color: #000;
+      font-size: 26px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .bio-section h3::after { content: ''; flex: 1; height: 2px; background: #FFD700; }
+
+    .custom-list { list-style: none; padding: 0; }
+    .custom-list li { position: relative; padding-left: 25px; margin-bottom: 15px; font-size: 16px; color: #333; }
+    .custom-list li::before {
+      content: '\f054'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; left: 0; top: 4px; color: #FFD700; font-size: 12px;
+    }
+
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+    .value-item {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 6px solid #FFD700;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+    .value-item h4 { font-family: 'Playfair Display', serif; color: #000; font-size: 20px; margin-bottom: 10px; font-weight: 700; }
+    .value-item p { font-size: 15px; color: #555; line-height: 1.6; }
+
+    @media (max-width: 992px) {
+      .profile-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+  /* Kondisi awal menu disembunyikan di HP */
+  .nav-links {
+    display: none; /* Ini yang bikin menu ilang di HP */
+    position: absolute;
+    top: 80px; /* Jarak dari atas navbar */
+    left: 0;
+    width: 100%;
+    background-color: #FFD700; /* Warna kuning senada navbar */
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  /* KETIKA DIKLIK (Class .open muncul lewat JS) */
+  .nav-links.open {
+    display: flex !important; /* Memaksa menu muncul */
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Munculkan tombol hamburger di HP */
+  .hamburger {
+    display: flex !important;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="images/logo2.jfif" alt="Logo Firma Hukum MAS" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="logo-title">FIRMA HUKUM MAS</span>
+          <span class="logo-sub">Moh Ainul Yakin & Partners</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+         <li><a href="index.html" class="nav-link" style="color:#000 !important; font-weight:700;">Home</a></li>
+        <li><a href="profil.html" class="nav-link" style="color:#000 !important; font-weight:700;">Profil</a></li>
+        <li><a href="layanan.html" class="nav-link" style="color:#000 !important; font-weight:700;">Layanan</a></li>
+        <li><a href="artikel.html" class="nav-link" style="color:#000 !important; font-weight:700;">Artikel</a></li>
+        <li><a href="tim.html" class="nav-link active" style="color:#000 !important; font-weight:700; background: rgba(0,0,0,0.1);">Tim</a></li>
+        <li><a href="kontak.html" class="nav-link" style="color:#000 !important; font-weight:700;">Kontak</a></li>
+        <li><a href="#kontak" class="nav-btn-konsul" style="background:#000; color:#FFD700 !important;">Konsultasi</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO MINI -->
+  <header class="profile-hero">
+    <div class="container">
+      <h1 style="font-family: 'Playfair Display', serif; font-weight: 800;">Profil Advokat</h1>
+      <p style="font-weight: 600;"><a href="index.html" style="color:#000; text-decoration: none;">Beranda</a> / Profil Lengkap</p>
+    </div>
+  </header>
+
+  <!-- DETAIL PROFIL -->
+  <main class="profile-detail">
+    <div class="container">
+      <div class="profile-grid">
+
+        <!-- KOLOM KIRI (SIDEBAR) -->
+        <aside class="profile-sidebar">
+          <div class="photo-wrapper">
+            <img src="images/fotopp.jpeg" alt="Mas Moh Ainul Yakin, S.H.">
+          </div>
+          
+          <div class="quick-contact">
+            <h3>Hubungi Langsung</h3>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>0853-3525-4018</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>yaqinmdr.official@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Perintis Utama 1 No. 5</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- KOLOM KANAN (KONTEN LENGKAP) -->
+        <section class="main-bio-content">
+          <h2>Mas Moh Ainul Yakin, S.H.</h2>
+          <div class="lawyer-title">Founder & Managing Partner</div>
+          
+          <div class="bio-text">
+            <p>Selamat datang di halaman profil resmi kami. <strong>FIRMA HUKUM MAS MOH AINUL YAKIN & PARTNERS</strong> didirikan dengan komitmen kuat untuk memberikan layanan hukum yang berintegritas, profesional, dan berorientasi pada keadilan.</p>
+          </div>
+
+          <div class="bio-section">
+            <h3>Visi & Misi</h3>
+            <p style="margin-bottom: 20px;"><strong>Visi:</strong> Menjadi firma hukum terpercaya, profesional, dan berintegritas tinggi.</p>
+            <ul class="custom-list">
+              <li>Memberikan pendampingan hukum secara maksimal berdasarkan kompetensi teruji.</li>
+              <li>Menjunjung tinggi kode etik advokat dan kejujuran.</li>
+              <li>Meningkatkan kesadaran hukum masyarakat melalui edukasi.</li>
+            </ul>
+          </div>
+
+          <div class="bio-section">
+            <h3>Nilai-Nilai Kami</h3>
+            <div class="values-grid">
+              <!-- Value 1 -->
+              <div class="value-item">
+                <h4>Integritas</h4>
+                <p>Prinsip utama yang melandasi kejujuran penanganan kasus.</p>
+              </div>
+              <!-- Value 2 -->
+              <div class="value-item">
+                <h4>Profesionalisme</h4>
+                <p>Keahlian tinggi didukung pemahaman regulasi terkini.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo-bg.png" alt="Logo" class="footer-logo-img" />
+            <div class="footer-logo-text">
+              <span class="footer-logo-title">FIRMA HUKUM MAS</span>
+              <span class="footer-logo-sub">Moh Ainul Yakin & Partners</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Profesional, Berintegritas, dan Berorientasi pada Solusi Hukum yang Tepat.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigasi</h4>
+          <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="tim.html">Tim</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="layanan.html#perdata">Hukum Perdata</a></li>
+            <li><a href="layanan.html#pidana">Hukum Pidana</a></li>
+            <li><a href="layanan.html#bisnis">Hukum Bisnis</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Kontak</h4>
+          <p><i class="fas fa-phone"></i> 0853-3525-4018</p>
+          <p><i class="fas fa-envelope"></i> yaqinmdr.official@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Perintis Utama 1 No. 5</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 Firma Hukum MAS Moh Ainul Yakin & Partners. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+ <script>
+  // Ambil elemen tombol hamburger dan daftar menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  // Ketika tombol hamburger diklik
+  hamburger.addEventListener('click', () => {
+    // Tambahkan atau hapus class 'open' pada menu
+    navLinks.classList.toggle('open');
+    // Tambahkan atau hapus class 'open' pada tombol (biar ada animasi kalau mau)
+    hamburger.classList.toggle('open');
+  });
+
+  // (Opsional) Tutup menu jika pengguna klik salah satu link di dalamnya
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>

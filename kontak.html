@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hubungi Kami | FIRMA HUKUM MAS MOH AINUL YAKIN & PARTNERS</title>
+  
+  <!-- Memanggil CSS Utama -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* ==========================================================================
+       CSS KHUSUS LAYOUT KONTAK (NAVBAR & FOOTER MENGIKUTI STYLE.CSS)
+       ========================================================================== */
+    
+    .contact-hero {
+      position: relative;
+      padding: 160px 0 100px 0;
+      /* GAMBAR LATAR: Berbeda dari Profil & Layanan */
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)), 
+                  url('https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      border-bottom: 5px solid #FFD700;
+      text-align: left;
+    }
+
+    .contact-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      color: #000000 !important;
+      font-weight: 900;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .contact-hero p {
+      font-size: 1.2rem;
+      color: #000000 !important;
+      font-weight: 800;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      padding: 80px 0;
+    }
+
+    .info-card {
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 30px;
+      border-radius: 8px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      transition: 0.3s;
+      border-left: 6px solid #FFD700;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    }
+
+    .info-card:hover { transform: translateX(10px); border-left-color: #000; }
+
+    .info-icon {
+      background: #000;
+      color: #FFD700;
+      width: 55px; height: 55px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+    }
+
+    .info-text h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 5px; color: #000; font-weight: 800; }
+    .info-text p { color: #333; font-size: 16px; font-weight: 600; }
+
+    .contact-form-container {
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .form-group { margin-bottom: 25px; }
+    .form-group label { display: block; font-size: 14px; color: #000; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; }
+
+    .form-control {
+      width: 100%;
+      background: #fff;
+      border: 2px solid #eee;
+      padding: 15px;
+      color: #000;
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .form-control:focus { outline: none; border-color: #FFD700; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 18px;
+      background: #000;
+      color: #FFD700;
+      border: none;
+      font-weight: 900;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 16px;
+      transition: 0.3s;
+      letter-spacing: 1px;
+    }
+    .btn-submit:hover { background: #333; transform: translateY(-3px); }
+
+    .map-container {
+      width: 100%;
+      height: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 5px solid #fff;
+      margin-bottom: 80px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero h1 { font-size: 2.5rem; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR (SAMA DENGAN HALAMAN LAIN) ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="images/logo2.jfif" alt="Logo" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="logo-title">FIRMA HUKUM MAS</span>
+          <span class="logo-sub">Moh Ainul Yakin & Partners</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="profil.html" class="nav-link">Profil</a></li>
+        <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+        <li><a href="artikel.html" class="nav-link">Artikel</a></li>
+        <li><a href="tim.html" class="nav-link">Tim</a></li>
+        <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+        <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+        <li><a href="#kontak" class="nav-btn-konsul">Konsultasi</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <header class="contact-hero">
+    <div class="container">
+      <h1>Hubungi Kami</h1>
+      <p>Jadwalkan pertemuan litigasi atau non-litigasi hari ini.</p>
+    </div>
+  </header>
+
+  <!-- ===== KONTEN UTAMA ===== -->
+  <section class="container">
+    <div class="contact-wrapper">
+      
+      <!-- Info Kontak (Teks Utuh) -->
+      <div class="contact-info-box">
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="info-text">
+            <h3>Alamat Kantor</h3>
+            <p>Gg. Perintis Utama I No.5, Bulak Banteng, Kec. Kenjeran, Surabaya</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="info-text">
+            <h3>WhatsApp</h3>
+            <p>0853-3525-4018</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div class="info-text">
+            <h3>Email</h3>
+            <p>yaqinmdr.official@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form (Teks Utuh) -->
+      <!-- Form (Sesuai dengan Index) -->
+<div class="contact-form-container">
+  <form id="formKontakHalaman">
+    <div class="form-group">
+      <label>Nama Lengkap</label>
+      <input type="text" id="nama_kontak" class="form-control" placeholder="Nama Anda" required>
+    </div>
+    <div class="form-group">
+      <label>No. WhatsApp / Telepon</label>
+      <input type="tel" id="nohp_kontak" class="form-control" placeholder="08xx-xxxx-xxxx" required>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="email_kontak" class="form-control" placeholder="Email Anda (Opsional)">
+    </div>
+    <div class="form-group">
+      <label>Bidang Layanan</label>
+      <select id="layanan_kontak" class="form-control" required style="background: white;">
+        <option value="">-- Pilih Layanan --</option>
+        <option value="Hukum Perdata">Hukum Perdata</option>
+        <option value="Hukum Pidana">Hukum Pidana</option>
+        <option value="Hukum Bisnis & Korporasi">Hukum Bisnis & Korporasi</option>
+        <option value="Penyelesaian Sengketa">Penyelesaian Sengketa</option>
+        <option value="Hukum Ketenagakerjaan">Hukum Ketenagakerjaan</option>
+        <option value="Hukum Pertanahan & Properti">Hukum Pertanahan & Properti</option>
+        <option value="Hukum Keluarga & Waris">Hukum Keluarga & Waris</option>
+        <option value="Perizinan & Kepatuhan">Perizinan & Kepatuhan</option>
+        <option value="Arbitrase & Mediasi">Arbitrase & Mediasi</option>
+        <option value="Konsultan Hukum Perusahaan">Konsultan Hukum Perusahaan</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Pesan / Deskripsi Masalah</label>
+      <textarea id="pesan_kontak" class="form-control" rows="5" placeholder="Ceritakan detail masalah hukum Anda..." required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">
+      <i class="fas fa-paper-plane"></i> KIRIM PESAN SEKARANG
+    </button>
+  </form>
+</div>
+    </div>
+
+    <!-- ===== GOOGLE MAPS ===== -->
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.2033225479868!2d112.76594277365444!3d-7.2176337708656035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f85722438f4b%3A0xe04528ae82c1e09!2sGg.%20Perintis%20Utama%20I%20No.5%2C%20Bulak%20Banteng%2C%20Kec.%20Kenjeran%2C%20Surabaya%2C%20Jawa%20Timur%2060127!5e0!3m2!1sid!2sid!4v1781471722975!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (SAMA DENGAN HALAMAN LAIN) ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo-bg.png" alt="Logo" class="footer-logo-img" />
+            <div class="footer-logo-text">
+              <span class="footer-logo-title">FIRMA HUKUM MAS</span>
+              <span class="footer-logo-sub">Moh Ainul Yakin & Partners</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Profesional, Berintegritas, dan Berorientasi pada Solusi Hukum yang Tepat.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Navigasi</h4>
+          <ul>
+<li><a href="index.html">Home</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="tim.html">Tim</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="layanan.html">Hukum Perdata</a></li>
+            <li><a href="layanan.html">Hukum Pidana</a></li>
+            <li><a href="layanan.html">Hukum Bisnis</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Kontak</h4>
+          <p><i class="fas fa-phone"></i> 0853-3525-4018</p>
+          <p><i class="fas fa-envelope"></i> yaqinmdr.official@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Perintis Utama 1 No. 5</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 Firma Hukum MAS Moh Ainul Yakin & Partners. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Menu Hamburger -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          navLinks.classList.toggle('open');
+        });
+      }
+    });
+
+     document.getElementById('formKontakHalaman').addEventListener('submit', function(e) {
+      e.preventDefault(); // Mencegah halaman reload
+
+      // 1. Ambil data dari inputan
+      const nama = document.getElementById('nama_kontak').value;
+      const nohp = document.getElementById('nohp_kontak').value;
+      const email = document.getElementById('email_kontak').value || '-';
+      const layanan = document.getElementById('layanan_kontak').value;
+      const pesan = document.getElementById('pesan_kontak').value;
+
+      // 2. Nomor WhatsApp Tujuan (FIX: 0853)
+      const nomorWA = "6285335254018"; 
+
+      // 3. Susun teks pesan WhatsApp
+      const teksPesan = `Halo Firma Hukum MAS, saya ingin berkonsultasi melalui Halaman Kontak.%0A%0A` +
+                        `*Data Klien:*%0A` +
+                        `- *Nama:* ${encodeURIComponent(nama)}%0A` +
+                        `- *No. WA:* ${encodeURIComponent(nohp)}%0A` +
+                        `- *Email:* ${encodeURIComponent(email)}%0A` +
+                        `- *Layanan:* ${encodeURIComponent(layanan)}%0A%0A` +
+                        `*Deskripsi Masalah:*%0A${encodeURIComponent(pesan)}`;
+
+      // 4. Buat URL WhatsApp
+      const urlWA = `https://wa.me/${nomorWA}?text=${teksPesan}`;
+
+      // 5. Buka WhatsApp di tab baru
+      window.open(urlWA, '_blank');
+  });
+
+  // Script Menu Hamburger (Tetap diletakkan agar bisa dibuka)
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  if (hamburger) {
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+      });
+  }
+  </script>
+</body>
+</html>

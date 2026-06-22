@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tim Kami | FIRMA HUKUM MAS MOH AINUL YAKIN & PARTNERS</title>
+  
+  <!-- Memanggil CSS Utama -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* ==========================================================================
+       CSS KHUSUS HALAMAN TIM (SINKRON DENGAN HALAMAN LAIN)
+       ========================================================================== */
+    body { background-color: #ffffff; color: #333; }
+
+    .team-hero {
+      position: relative;
+      padding: 160px 0 100px 0;
+      /* GAMBAR LATAR: Tema Tim/Kantor/Hukum */
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)), 
+                  url('https://images.unsplash.com/photo-1521791136368-328ac810127f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      border-bottom: 5px solid #FFD700;
+      text-align: left;
+    }
+
+    .team-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      color: #000000 !important;
+      font-weight: 900;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .team-hero p {
+      font-size: 1.2rem;
+      color: #000000 !important;
+      font-weight: 800;
+    }
+
+    .team-section { padding: 80px 0; background: #fff; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .team-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      text-align: center;
+      border-top: 5px solid #FFD700;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      border-top-color: #000;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .team-img-box {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+
+    .team-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .team-info { padding: 30px 20px; }
+
+    .team-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #000;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .team-role {
+      color: #000;
+      background: #FFD700;
+      padding: 2px 12px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+
+    .team-bio {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .team-social { display: flex; justify-content: center; gap: 15px; }
+
+    .team-social a {
+      width: 40px; height: 40px;
+      background: #000;
+      color: #FFD700;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: 0.3s;
+    }
+
+    .team-social a:hover { background: #FFD700; color: #000; transform: scale(1.1); }
+
+    /* RESPONSIVE MENU FIX */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px; left: 0; width: 100%;
+        background: #FFD700;
+        flex-direction: column; padding: 20px 0;
+        z-index: 1000;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      }
+      .nav-links.open { display: flex !important; }
+      .hamburger { display: flex !important; }
+      .team-hero h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar" style="background: #FFD700;">
+    <div class="nav-container container">
+      <div class="nav-logo">
+        <img src="images/logo2.jfif" alt="Logo" class="nav-logo-img" style="height:60px; mix-blend-mode: multiply; filter: none !important;" />
+        <div class="nav-logo-text">
+          <span class="logo-title" style="color:#000; font-weight:900;">FIRMA HUKUM MAS</span>
+          <span class="logo-sub" style="color:#000; font-weight:700;">Moh Ainul Yakin & Partners</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link" style="color:#000 !important; font-weight:700;">Home</a></li>
+        <li><a href="profil.html" class="nav-link" style="color:#000 !important; font-weight:700;">Profil</a></li>
+        <li><a href="layanan.html" class="nav-link" style="color:#000 !important; font-weight:700;">Layanan</a></li>
+        <li><a href="artikel.html" class="nav-link" style="color:#000 !important; font-weight:700;">Artikel</a></li>
+        <li><a href="tim.html" class="nav-link active" style="color:#000 !important; font-weight:700; background: rgba(0,0,0,0.1);">Tim</a></li>
+        <li><a href="galeri.html" class="nav-link" style="color:#000 !important; font-weight:700;">Galeri</a></li>
+        <li><a href="kontak.html" class="nav-link" style="color:#000 !important; font-weight:700;">Kontak</a></li>
+        <li><a href="#kontak" class="nav-btn-konsul" style="background:#000; color:#FFD700 !important;">Konsultasi</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" style="display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer;">
+        <span style="width:25px; height:3px; background:#000;"></span>
+        <span style="width:25px; height:3px; background:#000;"></span>
+        <span style="width:25px; height:3px; background:#000;"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO TIM ===== -->
+  <header class="team-hero">
+    <div class="container">
+      <h1>Tim Advokat Kami</h1>
+      <p>Dedikasi, Integritas, dan Keahlian untuk Solusi Hukum Anda.</p>
+    </div>
+  </header>
+
+  <!-- ===== MAIN TEAM GRID ===== -->
+  <section class="team-section">
+    <div class="container">
+      <div class="team-grid">
+        
+        <!-- Anggota 1: Managing Partner -->
+        <div class="team-card">
+          <div class="team-img-box">
+            <img src="images/fotopp.jpeg" alt="Moh Ainul Yakin, S.H., M.H." />
+          </div>
+          <div class="team-info">
+            <h3>Moh Ainul Yakin, S.H., M.H.</h3>
+            <span class="team-role">Founder & Managing Partner</span>
+            <p class="team-bio">Spesialis dalam Hukum Korporasi, Litigasi Komersial, dan Strategi Penyelesaian Sengketa tingkat tinggi dengan pengalaman lebih dari satu dekade.</p>
+            <!-- <div class="team-social">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="mailto:yaqinmdr.official@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- Anggota 2: Advokat Senior -->
+        <div class="team-card">
+          <div class="team-img-box">
+            <img src="images/tim1.jpeg" alt="Budi Santoso, S.H." />
+          </div>
+          <div class="team-info">
+            <h3>Sulaiman S,H., M.H</h3>
+            <span class="team-role">Senior Associate / Advokat</span>
+            <p class="team-bio">Ahli dalam penanganan Hukum Pidana, Hukum Perdata, serta pendampingan klien di setiap tingkatan proses peradilan di Indonesia.</p>
+            <!-- <div class="team-social">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- Anggota 3: Spesialis Pertanahan -->
+        <div class="team-card">
+          <div class="team-img-box">
+            <img src="images/tim2.jpeg" alt="Siti Aminah, S.H., M.Kn." />
+          </div>
+          <div class="team-info">
+            <h3>Wardi Salim, SH</h3>
+            <span class="team-role">Senior Associate / Advokat</span>
+            <p class="team-bio">Ahli dalam penanganan Hukum Pidana, Hukum Perdata, serta pendampingan klien di setiap tingkatan proses peradilan di Indonesia.</p>
+            <!-- <div class="team-social">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container footer-grid">
+      
+      <!-- Bagian Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo-bg.png" alt="Logo Firma Hukum MAS" class="footer-logo-img" />
+          <!-- Teks Branding yang tadi hilang -->
+          <div class="footer-logo-text">
+            <span class="footer-logo-title">FIRMA HUKUM MAS</span>
+            <span class="footer-logo-sub">Moh Ainul Yakin & Partners</span>
+          </div>
+        </div>
+        <p class="footer-tagline">Profesional, Berintegritas, dan Berorientasi pada Solusi Hukum yang Tepat.</p>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+
+      <!-- Layanan -->
+      <div class="footer-links">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="layanan.html#perdata">Hukum Perdata</a></li>
+          <li><a href="layanan.html#pidana">Hukum Pidana</a></li>
+          <li><a href="layanan.html#bisnis">Hukum Bisnis</a></li>
+          <li><a href="layanan.html#ketenagakerjaan">Ketenagakerjaan</a></li>
+          <li><a href="layanan.html#pertanahan">Pertanahan</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div class="footer-contact">
+        <h4>Kontak</h4>
+        <p><i class="fas fa-phone"></i> 0853-3525-4018</p>
+        <p><i class="fas fa-envelope"></i> yaqinmdr.official@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Perintis Utama 1 No. 5</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2025 Firma Hukum MAS Moh Ainul Yakin & Partners. Hak Cipta Dilindungi.</p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    // Script Menu Hamburger
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          navLinks.classList.toggle('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

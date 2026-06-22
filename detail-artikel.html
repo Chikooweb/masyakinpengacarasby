@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Artikel - FIRMA HUKUM MAS MOH AINUL YAKIN & PARTNERS</title>
+  
+  <!-- Memanggil CSS Utama -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       CSS KHUSUS DETAIL ARTIKEL
+       ========================================================================== */
+    body { background-color: #ffffff; color: #333; }
+
+    /* Hero Kecil untuk Judul Artikel */
+    .article-hero-mini {
+      padding: 140px 0 60px;
+      background: #FFD700;
+      border-bottom: 5px solid #000;
+    }
+    .article-hero-mini h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #000;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .detail-container { padding: 60px 0; display: grid; grid-template-columns: 2fr 1fr; gap: 50px; }
+    
+    .article-meta { margin-bottom: 25px; font-size: 14px; color: #555; display: flex; gap: 20px; font-weight: 700; text-transform: uppercase; }
+    .article-meta i { color: #000; }
+
+    .main-image { 
+        width: 100%; 
+        height: auto; 
+        max-height: 500px; 
+        object-fit: cover; 
+        border-radius: 8px; 
+        margin-bottom: 30px; 
+        border: 1px solid #eee;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .article-content { font-size: 18px; color: #333; text-align: justify; line-height: 1.8; }
+    .article-content p { margin-bottom: 25px; }
+
+    /* SIDEBAR */
+    .sidebar-box { background: #f9f9f9; padding: 30px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #eee; position: sticky; top: 100px; }
+    .sidebar-box h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 25px; border-bottom: 4px solid #FFD700; display: inline-block; font-weight: 800; color: #000; }
+    
+    .related-post { display: flex; gap: 15px; margin-bottom: 20px; text-decoration: none; color: #000; transition: 0.3s; align-items: center; }
+    .related-post:hover { transform: translateX(5px); }
+    .related-post img { width: 70px; height: 70px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; }
+    .related-post h5 { font-size: 14px; line-height: 1.4; font-weight: 700; }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) { 
+      .detail-container { grid-template-columns: 1fr; } 
+      .article-hero-mini h1 { font-size: 1.8rem; }
+      .nav-links {
+        display: none; position: absolute; top: 80px; left: 0; width: 100%;
+        background: #FFD700; flex-direction: column; padding: 20px 0;
+        z-index: 1000;
+      }
+      .nav-links.open { display: flex !important; }
+      .hamburger { display: flex !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar" style="background: #FFD700;">
+    <div class="nav-container container">
+      <div class="nav-logo">
+        <img src="images/logo2.jfif" alt="Logo" class="nav-logo-img" style="height:60px; mix-blend-mode: multiply; filter: none !important;" />
+        <div class="nav-logo-text">
+          <span class="logo-title" style="color:#000; font-weight:900;">FIRMA HUKUM MAS</span>
+          <span class="logo-sub" style="color:#000; font-weight:700;">Moh Ainul Yakin & Partners</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link" style="color:#000 !important; font-weight:700;">Home</a></li>
+        <li><a href="profil.html" class="nav-link" style="color:#000 !important; font-weight:700;">Profil</a></li>
+        <li><a href="layanan.html" class="nav-link" style="color:#000 !important; font-weight:700;">Layanan</a></li>
+        <li><a href="artikel.html" class="nav-link active" style="color:#000 !important; font-weight:700; background: rgba(0,0,0,0.1);">Artikel</a></li>
+        <li><a href="kontak.html" class="nav-link" style="color:#000 !important; font-weight:700;">Kontak</a></li>
+        <li><a href="kontak.html#kontak" class="nav-btn-konsul" style="background:#000; color:#FFD700 !important;">Konsultasi</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" style="display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer;">
+        <span style="width:25px; height:3px; background:#000;"></span>
+        <span style="width:25px; height:3px; background:#000;"></span>
+        <span style="width:25px; height:3px; background:#000;"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- JUDUL ARTIKEL -->
+  <header class="article-hero-mini">
+    <div class="container">
+      <h1 id="artTitle">Memuat Artikel...</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="detail-container">
+      
+      <!-- KONTEN UTAMA -->
+      <article>
+        <div class="article-meta">
+          <span><i class="fas fa-calendar-alt"></i> <span id="artDate">-</span></span>
+          <span><i class="fas fa-bookmark"></i> <span id="artTag">-</span></span>
+          <span><i class="fas fa-user-tie"></i> Admin MAS</span>
+        </div>
+        
+        <img src="" id="artImg" class="main-image" alt="Visual Artikel">
+        
+        <div class="article-content" id="artContent">
+          <!-- Isi artikel muncul di sini -->
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div class="sidebar-box">
+          <h4>Artikel Lainnya</h4>
+          <a href="detail-artikel.html?id=perjanjian-bisnis" class="related-post">
+            <img src="images/perjanjian.webp" alt="Post">
+            <h5>Hak & Kewajiban Perjanjian Bisnis</h5>
+          </a>
+          <a href="detail-artikel.html?id=sengketa-tanah" class="related-post">
+            <img src="images/tanah.webp" alt="Post">
+            <h5>Langkah Hukum Sengketa Tanah</h5>
+          </a>
+          <a href="detail-artikel.html?id=hukum-keluarga" class="related-post">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400" alt="Post">
+            <h5>Penanganan Hukum Keluarga</h5>
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+<!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo-bg.png" alt="Logo" class="footer-logo-img" style="mix-blend-mode: multiply; filter: none !important;" />
+            <div class="footer-logo-text">
+              <span class="footer-logo-title">FIRMA HUKUM MAS</span>
+              <span class="footer-logo-sub">Moh Ainul Yakin & Partners</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Profesional, Berintegritas, dan Berorientasi pada Solusi Hukum yang Tepat.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="layanan.html">Layanan</a></li>
+            <li><a href="artikel.html">Artikel</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="layanan.html">Hukum Perdata</a></li>
+            <li><a href="layanan.html">Hukum Pidana</a></li>
+            <li><a href="layanan.html">Hukum Bisnis</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Kontak</h4>
+          <p><i class="fas fa-phone"></i> 0853-3525-4018</p>
+          <p><i class="fas fa-envelope"></i> yaqinmdr.official@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Perintis Utama 1 No. 5</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 Firma Hukum MAS Moh Ainul Yakin & Partners. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // DATA ARTIKEL (LENGKAP & UTUH)
+    const articles = {
+      'perjanjian-bisnis': {
+        title: 'Memahami Hak dan Kewajiban dalam Perjanjian Bisnis',
+        date: '1 Juni 2026',
+        tag: 'Hukum Perdata',
+        img: 'images/perjanjian.webp',
+        content: '<p>Perjanjian bisnis adalah dokumen hukum yang mengikat dua pihak atau lebih dalam sebuah transaksi atau kerjasama. Ketidaktelitian dalam menyusun poin-poin perjanjian seringkali menjadi celah terjadinya sengketa wanprestasi.</p><p>Poin krusial yang harus ada adalah identitas para pihak, objek perjanjian, hak dan kewajiban, serta penyelesaian sengketa. Pastikan setiap klausul dipahami secara mendalam sebelum ditandatangani guna menghindari kerugian materiel maupun imateriel di masa depan.</p>'
+      },
+      'prosedur-phk': {
+        title: 'Prosedur PHK yang Sesuai dengan Regulasi Terbaru',
+        date: '15 Mei 2026',
+        tag: 'Ketenagakerjaan',
+        img: 'images/phk.jfif',
+        content: '<p>Pemutusan Hubungan Kerja (PHK) harus dilakukan berdasarkan UU Cipta Kerja dan peraturan turunannya. Perusahaan dilarang melakukan PHK secara sepihak tanpa alasan yang sah secara hukum.</p><p>Tahapan PHK meliputi pemberian surat peringatan yang sah, perundingan bipartit secara kekeluargaan, hingga jalur mediasi di Dinas Tenaga Kerja jika kesepakatan tidak tercapai. Hak-hak karyawan seperti pesangon dan uang penghargaan masa kerja wajib dipenuhi sesuai aturan.</p>'
+      },
+      'sengketa-tanah': {
+        title: 'Sengketa Tanah: Langkah Hukum Pembelaan Hak Hakiki',
+        date: '3 Mei 2026',
+        tag: 'Pertanahan',
+        img: 'images/tanah.webp',
+        content: '<p>Sengketa tanah sering terjadi karena tumpang tindih sertifikat atau klaim dari ahli waris lain. Langkah awal yang paling krusial adalah melakukan validasi data di BPN (Badan Pertanahan Nasional) untuk mengecek keaslian dokumen.</p><p>Jika proses mediasi gagal, jalur gugatan perdata di Pengadilan Negeri adalah langkah terakhir untuk menetapkan siapa pemilik sah secara hukum agraria di Indonesia. Pendampingan advokat sangat diperlukan untuk meneliti riwayat tanah (warkah) secara mendalam.</p>'
+      },
+      'hukum-keluarga': {
+        title: 'Penanganan Profesional Masalah Hukum Keluarga',
+        date: '15 Juni 2026',
+        tag: 'Hukum Keluarga',
+        img: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800',
+        content: '<p>Hukum keluarga meliputi berbagai aspek mulai dari perkawinan, perceraian, hak asuh anak, hingga pembagian harta gono-gini. Kami memastikan setiap proses hukum dijalankan dengan sangat hati-hati dan menjaga privasi klien.</p><p>Kami memastikan proses hukum berjalan dengan memperhatikan sisi kemanusiaan dan keadilan bagi seluruh anggota keluarga, terutama demi kepentingan terbaik anak-anak yang terdampak dalam perselisihan.</p>'
+      },
+      'hukum-bisnis': {
+        title: 'Strategi Hukum dalam Menjalankan Bisnis & Korporasi',
+        date: '14 Juni 2026',
+        tag: 'Hukum Bisnis',
+        img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800',
+        content: '<p>Dunia bisnis penuh dengan risiko kontrak dan regulasi yang terus berubah. Kami membantu perusahaan Anda mulai dari pendirian badan hukum, pembuatan draf kontrak yang aman, hingga kepatuhan hukum perusahaan (compliance).</p><p>Mitigasi risiko sejak dini adalah kunci sukses bisnis jangka panjang agar terhindar dari gugatan hukum yang dapat mengganggu jalannya operasional perusahaan.</p>'
+      },
+      'hukum-perdata': {
+        title: 'Penyelesaian Sengketa Perdata dan Hak Milik',
+        date: '13 Juni 2026',
+        tag: 'Hukum Perdata',
+        img: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800',
+        content: '<p>Sengketa perdata seperti hutang piutang atau sengketa lahan memerlukan analisis dokumen yang sangat cermat. Keabsahan bukti tulis seringkali menjadi penentu kemenangan dalam persidangan perdata.</p><p>Tim kami akan mendampingi Anda untuk mengamankan hak-hak perdata Anda di pengadilan maupun melalui jalur mediasi di luar pengadilan agar penyelesaian masalah menjadi lebih cepat dan efisien.</p>'
+      }
+    };
+
+    // FUNGSI LOAD ARTIKEL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (articles[id]) {
+      const data = articles[id];
+      document.getElementById('artTitle').innerText = data.title;
+      document.getElementById('artDate').innerText = data.date;
+      document.getElementById('artTag').innerText = data.tag;
+      document.getElementById('artImg').src = data.img;
+      document.getElementById('artContent').innerHTML = data.content;
+    } else {
+      document.getElementById('artTitle').innerText = "Artikel Tidak Ditemukan";
+      document.getElementById('artContent').innerHTML = "<p>Maaf, artikel tidak tersedia.</p><a href='artikel.html'>Kembali</a>";
+    }
+
+    // MENU HAMBURGER
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html> 
